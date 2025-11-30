@@ -1,0 +1,165 @@
+:root {
+    --bg-color: #f8f9fa;
+    --text-color: #333;
+    --card-bg: #ffffff;
+
+    /* Hormone Colors */
+    --dopamine-bg: #E3F2FD;
+    --dopamine-border: #2196F3;
+    --oxytocin-bg: #FCE4EC;
+    --oxytocin-border: #E91E63;
+    --serotonin-bg: #E8F5E9;
+    --serotonin-border: #4CAF50;
+    --endorphins-bg: #FFF3E0;
+    --endorphins-border: #FF9800;
+
+    /* Type Colors */
+    --type-food: #FFCCBC;
+    --type-physical: #C8E6C9;
+    --type-mental: #E1BEE7;
+    --type-social: #B3E5FC;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+h1 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    color: #2c3e50;
+}
+
+.legend {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+.periodic-table {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.element-card {
+    background: var(--card-bg);
+    border: 3px solid transparent;
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    aspect-ratio: 1;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.element-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+/* Hormone Specific Styles */
+.dopamine {
+    background-color: var(--dopamine-bg);
+    border-color: var(--dopamine-border);
+}
+
+.oxytocin {
+    background-color: var(--oxytocin-bg);
+    border-color: var(--oxytocin-border);
+}
+
+.serotonin {
+    background-color: var(--serotonin-bg);
+    border-color: var(--serotonin-border);
+}
+
+.endorphins {
+    background-color: var(--endorphins-bg);
+    border-color: var(--endorphins-border);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.impact-level {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.symbol {
+    font-size: 2rem;
+    font-weight: 900;
+    text-align: center;
+    margin: 0.5rem 0;
+    opacity: 0.2;
+    /* Placeholder for icon/image */
+}
+
+.name {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.type-badge {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 0.7rem;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* Responsive Grid Adjustments for "Periodic Table" feel */
+@media (min-width: 1024px) {
+    .periodic-table {
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
